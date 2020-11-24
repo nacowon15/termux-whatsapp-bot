@@ -1,12 +1,12 @@
 ## Termux WhatsApp Bot 
 
-A Lightweight WhatApp Bot Without Headless Browser
+un bot en español oleeee
 
 <img src="https://www.pngkey.com/png/full/824-8245235_if-you-just-want-crazy-anime.png" width="300" >
 
 
-![Twitter](https://img.shields.io/twitter/follow/fdciabdul?style=flat-square)
-![Fork](https://img.shields.io/github/forks/fdciabdul/termux-whatsapp-bot?style=flat-square)
+![Instagram](https://instagram.com/trapy_tomojado?igshid=19fs3la60b0z3)
+
 
  
 
