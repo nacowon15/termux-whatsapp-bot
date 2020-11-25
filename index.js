@@ -88,7 +88,7 @@ conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say h
 }
 
 // FF
-if(text.includes("!admin supremo")){
+if(text.includes("!adminsupremo")){
 var num = text.replace(/!cek/ , "")
 var idn = num.replace("0","+62");
 
@@ -97,7 +97,7 @@ const gg = idn+'+34605735266'
 
 const exists = await conn.isOnWhatsApp (gg)
 console.log(exists);
-conn.sendMessage(id ,`${gg} ${exists ? " existe " : " does not exist"} en WhatsApp`, MessageType.text)
+conn.sendMessage(id ,`${gg} ${exists ? " existe " : " does not exist"} es WhatsApp`, MessageType.text)
 }
 if (text == '!menu'){
 conn.sendMessage(id, menu.menu ,MessageType.text);
@@ -276,7 +276,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
    if (text.includes("!ptl"))
    {
-    var items = ["cosplay girl", "chica gamer", "fuck girl", "korean girl"];
+    var items = ["cosplay girl", "gamer girl", "fuck girl", "korean girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -305,7 +305,36 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 	
 	if (text.includes("!macaco"))
    {
-    var items = ["monkey", "macaco", "macaquinho", "mono"];
+    var items = ["monkey", "macaco", "macaquinho", "macaquinhos"];
+    var cewe = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    
+    axios.get(url)
+      .then((result) => {
+        var b = JSON.parse(JSON.stringify(result.data));
+        var cewek =  b[Math.floor(Math.random() * b.length)];
+        imageToBase64(cewek) // Path to the image
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); // Ta-da	
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error); // Logs an error if there was one
+            }
+        )
+    
+    });
+    }
+	
+	   if (text.includes("!hentai"))
+   {
+    var items = ["hentai girl", "ecchi", "waifu", "hentai"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
