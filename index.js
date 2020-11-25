@@ -334,7 +334,37 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 	
 	   if (text.includes("!hentai"))
    {
-    var items = ["hentai girl", "ecchi", "waifu", "hentai"];
+    var items = ["hentai girl", "ecchi18", "ahegao", "hentai","dxd school hentai"];
+    var cewe = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    
+    axios.get(url)
+      .then((result) => {
+        var b = JSON.parse(JSON.stringify(result.data));
+        var cewek =  b[Math.floor(Math.random() * b.length)];
+        imageToBase64(cewek) // Path to the image
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); // Ta-da	
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error); // Logs an error if there was one
+            }
+        )
+    
+    });
+    }
+	
+	
+	if (text.includes("!waifu"))
+   {
+    var items = ["waifu girl", "waifu", "waifu hentai", "loli hentai","waifus"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
