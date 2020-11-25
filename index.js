@@ -88,7 +88,7 @@ conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say h
 }
 
 // FF
-if(text.includes("!adminsupremo")){
+if(text.includes("!admin supremo")){
 var num = text.replace(/!cek/ , "")
 var idn = num.replace("0","+62");
 
@@ -97,7 +97,7 @@ const gg = idn+'+34605735266'
 
 const exists = await conn.isOnWhatsApp (gg)
 console.log(exists);
-conn.sendMessage(id ,`${gg} ${exists ? " exists " : " does not exist"} on WhatsApp`, MessageType.text)
+conn.sendMessage(id ,`${gg} ${exists ? " existe " : " does not exist"} en WhatsApp`, MessageType.text)
 }
 if (text == '!menu'){
 conn.sendMessage(id, menu.menu ,MessageType.text);
