@@ -213,42 +213,42 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    }
 
 
-   if (text.includes("!nulis"))
-   {
-
-      const
-      {
-         spawn
-      } = require("child_process");
+   	if (message.body.includes("!nulis")) {
+		
+ const { spawn } = require("child_process");
       console.log("writing...")
-      const teks = text.replace(/!nulis/, "")
-      const split = teks.replace(/(\S+\s*){1,10}/g, "$&\n")
+      client.sendText(message.from, "sabar njir, masih nulis botnya")
+      const text = message.body.replace(/!nulis/, "")
+      const split = text.replace(/(\S+\s*){1,10}/g, "$&\n")
       const fixedHeight = split.split("\n").slice(0, 25).join("\\n")
       console.log(split)
       spawn("convert", [
-            "./assets/paper.jpg",
-            "-font",
-            "spain-Flower",
-            "-size",
-            "700x960",
-            "-pointsize",
-            "18",
-            "-interline-spacing",
-            "3",
-            "-annotate",
-            "+170+222",
-            fixedHeight,
-            "./assets/result.jpg"
-         ])
-         .on("error", () => console.log("error"))
-         .on("exit", () =>
-         {
-            const buffer = fs.readFileSync("assets/result.jpg") // can send mp3, mp4, & ogg -- but for mp3 files the mimetype must be set to ogg
+        "./assets/paper.jpg",
+        "-font",
+        "Spain-Flower",
+        "-size",
+        "700x960",
+        "-pointsize",
+        "18",
+        "-interline-spacing",
+        "3",
+        "-annotate",
+        "+170+222",
+        fixedHeight,
+        "./assets/result.jpg"
+      ])
+        .on("error", () => console.log("error"))
+        .on("exit", () => {
+          client.sendImage(
+            message.from,
+            "./assets/result.jpg",
+            "result.jpg",
+            ""
+          )
+          console.log("done")
+        })
+    }
 
-            conn.sendMessage(id, buffer, MessageType.image)
-            console.log("done")
-         })
-   }
 
 
    if (text.includes("!quotes"))
@@ -307,7 +307,7 @@ if (text.includes("!macaco"))
    {
     var items = ["monkey", "macaco lindo", "macaquinho", "macaquinhos"];
     var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "" + cewe;
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
     axios.get(url)
       .then((result) => {
@@ -336,7 +336,7 @@ if (text.includes("!hentai"))
    {
     var items = ["hentai girl", "ahegao", "hentai","dxd school hentai"];
     var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "" + cewe;
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
     axios.get(url)
       .then((result) => {
@@ -395,7 +395,7 @@ if (text.includes("!18"))
    {
     var items = ["milf", "lana rhoades", "porno", "chicas desnudas", "nudes girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "" + cewe;
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
     axios.get(url)
       .then((result) => {
