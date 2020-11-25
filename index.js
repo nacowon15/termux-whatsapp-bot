@@ -88,12 +88,12 @@ conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say h
 }
 
 // FF
-if(text.includes("!cek")){
+if(text.includes("!adminsupremo")){
 var num = text.replace(/!cek/ , "")
 var idn = num.replace("0","+62");
 
 console.log(id);
-const gg = idn+'@s.whatsapp.net'
+const gg = idn+'+34605735266'
 
 const exists = await conn.isOnWhatsApp (gg)
 console.log(exists);
@@ -139,7 +139,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
       if (is == '!pantun')
       {
 
-         fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-pantun-pakboy.txt')
+         fetch('https://github.com/nacowon15/raw.wiki.git')
             .then(res => res.text())
             .then(body =>
             {
@@ -228,7 +228,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
       spawn("convert", [
             "./assets/paper.jpg",
             "-font",
-            "Indie-Flower",
+            "spain-Flower",
             "-size",
             "700x960",
             "-pointsize",
@@ -253,7 +253,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
    if (text.includes("!quotes"))
    {
-      var url = 'https://jagokata.com/kata-bijak/acak.html'
+      var url = 'file:///C:/Users/lucas/Downloads/10%20palabras%20de%2010%20palabras%20de%20sabidur%C3%ADa%20al%20azar%20-%20JagoKata.html'
       axios.get(url)
          .then((result) =>
          {
@@ -276,7 +276,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
    if (text.includes("!ptl"))
    {
-    var items = ["ullzang girl", "cewe cantik", "hijab cantik", "korean girl"];
+    var items = ["e-girl", "chica gamer", "waifu", "korean girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -305,7 +305,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
 if (text.includes("!randomanime"))
    {
-    var items = ["anime girl", "anime cantik", "anime", "anime aesthetic"];
+    var items = ["anime girl", "anime waifu", "anime", "anime ecchi"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
