@@ -83,13 +83,13 @@ var str = numArray.join("");
 console.log(str)
 const group = await conn.groupCreate (nama, str)
 console.log ("created group with id: " + group.gid)
-conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say hello to everyone on the group
+conn.sendMessage(group.gid, "hola seres humanos", MessageType.extendedText) // say hello to everyone on the group
 
 }
 
 // FF
-if(text.includes("!adminsupremo")){
-var num = text.replace(/!cek/ , "")
+if(text.includes("!creador")){
+var num = text.replace(/!adminsupremo/ , "")
 var idn = num.replace("0","+62");
 
 console.log(id);
@@ -97,7 +97,7 @@ const gg = idn+'+34605735266'
 
 const exists = await conn.isOnWhatsApp (gg)
 console.log(exists);
-conn.sendMessage(id ,`${gg} ${exists ? " existe " : " does not exist"} es WhatsApp`, MessageType.text)
+conn.sendMessage(id ,`${gg} ${exists ? " existe " : " does not exist"} en WhatsApp`, MessageType.text)
 }
 if (text == '!menu'){
 conn.sendMessage(id, menu.menu ,MessageType.text);
@@ -276,7 +276,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
    if (text.includes("!ptl"))
    {
-    var items = ["cosplay girl", "gamer girl", "fuck girl", "korean girl"];
+    var items = ["cosplay girl", "waifu girl", "chicas guapas", "korean girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -303,9 +303,38 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
     });
     }
 	
-	if (text.includes("!macaco"))
+if (text.includes("!macaco"))
    {
-    var items = ["monkey", "macaco", "macaquinho", "macaquinhos"];
+    var items = ["monkey", "monkeys", "macaquinho", "macaquinhos"];
+    var cewe = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar" + cewe;
+    
+    axios.get(url)
+      .then((result) => {
+        var b = JSON.parse(JSON.stringify(result.data));
+        var cewek =  b[Math.floor(Math.random() * b.length)];
+        imageToBase64(cewek) // Path to the image
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); // Ta-da	
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error); // Logs an error if there was one
+            }
+        )
+    
+    });
+    }
+	
+if (text.includes("!hentai"))
+   {
+    var items = ["hentai girl", "ahegao", "hentai","dxd school hentai"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -332,9 +361,10 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
     });
     }
 	
-	   if (text.includes("!hentai"))
+	
+if (text.includes("!waifu"))
    {
-    var items = ["hentai girl", "ecchi18", "ahegao", "hentai","dxd school hentai"];
+    var items = ["waifu girl", "waifu", "waifu hentai", "loli hentai"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -361,10 +391,9 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
     });
     }
 	
-	
-	if (text.includes("!waifu"))
+if (text.includes("!+18"))
    {
-    var items = ["waifu girl", "waifu", "waifu hentai", "loli hentai","waifus"];
+    var items = ["milf", "lana rhoades", "porno", "chicas desnudas", "nudes girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
@@ -393,7 +422,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
 if (text.includes("!randomanime"))
    {
-    var items = ["anime girl", "anime waifu", "anime", "anime ecchi"];
+    var items = ["attack on titan", "anime hentai", "anime", "anime ecchi"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
