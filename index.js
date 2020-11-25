@@ -305,9 +305,9 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 	
 if (text.includes("!macaco"))
    {
-    var items = ["monkey", "monkeys", "macaquinho", "macaquinhos"];
+    var items = ["monkey", "macaco lindo", "macaquinho", "macaquinhos"];
     var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.fdci.se/rep.php?gambar" + cewe;
+    var url = "" + cewe;
     
     axios.get(url)
       .then((result) => {
@@ -336,7 +336,7 @@ if (text.includes("!hentai"))
    {
     var items = ["hentai girl", "ahegao", "hentai","dxd school hentai"];
     var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    var url = "" + cewe;
     
     axios.get(url)
       .then((result) => {
@@ -391,11 +391,11 @@ if (text.includes("!waifu"))
     });
     }
 	
-if (text.includes("!+18"))
+if (text.includes("!18"))
    {
     var items = ["milf", "lana rhoades", "porno", "chicas desnudas", "nudes girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    var url = "" + cewe;
     
     axios.get(url)
       .then((result) => {
@@ -422,7 +422,7 @@ if (text.includes("!+18"))
 
 if (text.includes("!randomanime"))
    {
-    var items = ["attack on titan", "anime hentai", "anime", "anime ecchi"];
+    var items = ["attack on titan", "anime hentai", "anime", "anime ecchi", "random anime"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
