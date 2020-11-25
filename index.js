@@ -276,7 +276,36 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
    if (text.includes("!ptl"))
    {
-    var items = ["e-girl", "chica gamer", "waifu", "korean girl"];
+    var items = ["cosplay girl", "chica gamer", "fuck girl", "korean girl"];
+    var cewe = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    
+    axios.get(url)
+      .then((result) => {
+        var b = JSON.parse(JSON.stringify(result.data));
+        var cewek =  b[Math.floor(Math.random() * b.length)];
+        imageToBase64(cewek) // Path to the image
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); // Ta-da	
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error); // Logs an error if there was one
+            }
+        )
+    
+    });
+    }
+	
+	if (text.includes("!macaco"))
+   {
+    var items = ["monkey", "macaco", "macaquinho", "mono"];
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
     
